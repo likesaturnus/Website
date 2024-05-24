@@ -1,0 +1,64 @@
+?php date_default_timezone_set('Asia/Jakarta'); if(isset($_POST['pesan'])){ $fp = fopen('p.txt', 'a'); fwrite($fp, '
+<div class="cp"><p><span>Pesan :</span><br />'.$_POST['pesan'].'</p><h6>'.date("d-M-Y (H:i)").'</h6></div>'); echo json_encode(array("s"=>200)); fclose($fp); die; } if(isset($_POST['d'])){ $fa = fopen('p.txt', 'a'); fwrite($fa,$_POST['d']); echo json_encode(array("s"=>200)); fclose($fa); die; } if(isset($_GET['d'])){ $fa = fopen('p.txt', 'a'); fclose($fa); $fr = fopen('p.txt', 'r'); echo json_encode(array("d"=>fgets($fr))); fclose($fr); die; } ?> <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Order Custom di Deka Tutorial</title> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script> <script src="https://dekatutorial.github.io/crd/s.js"></script> <link rel="stylesheet" type="text/css" href="https://dekatutorial.github.io/crd/s.css" /> </head> <body> <?php if(isset($_GET['pesan'])){ echo "<div id='ccp'>"; $fp = fopen('p.txt', 'r'); fgets($fp); while(!feof($fp)){ echo "".fgets($fp); } fclose($fp); echo "</div></body></html>"; die; } ?> <script>dt()</script>
+    <div class="ctnr">
+      <div class="lv">
+        <img src="https://dekatutorial.github.io/crd/lv.svg" />
+        <p>Klik Love-nya byby</p>
+      </div>
+      <div class="ctn">
+        <button class="btn next">[ Tap byby ]</button>
+        <button class="btn send">[ Kirim pesan ke aku by ]</button>
+      </div>
+    </div>
+<script>
+
+  konten = [
+    {
+      gambar: "hai.jpg",
+      ucapan: "Hai byby sayang",
+    },
+    {
+      gambar: "galihkecil.jpg",
+      ucapan: "Selamat ulang tahun sayangku",
+    },
+    {
+      ucapan: "CIE 24TAHUN! Byby uda tua tau huhu.. tapi gapapa yang penting sehat selalu ya by🩷",
+    },
+    {
+      gambar: "galihjelek.jpg",
+      ucapan: "Semoga byby juga panjang umur dan diberi kebahagiaan ya terus ya😜",
+    },
+    {
+      gambar: "yulilove.jpg",
+      ucapan: "Semoga byby tambah sayang sama aku!",
+    },
+    {
+      gambar: "galihdesty.jpg",
+      ucapan: "Kaya difoto ini ya byby",
+    },
+    {
+      gambar: "berduaikan.jpg",
+      ucapan: "Atau kaya gini hehehe byby pasti seneng kan?😽",
+    },
+    {
+      gambar: "galihngeledek.jpg",
+      ucapan: "Maaf ya byby aku nda bisa kadoin byby civic atau pajero😭😭😭🙏🏻",
+    },
+    {
+      ucapan: "Oiya, jangan ngambek teyus ya byby",
+      gambar: "yulingambek.jpg",
+    },
+    {
+      ucapan: "Once again, happy birthday byby🎉",
+      gambar: "berdua.jpg",
+    },
+    {
+      ucapan: "Udah ah ya xixixi, I love you byby🙆🏻‍♀",
+    }
+  ];
+
+  musik = "musik birthday.mp3";
+  nomorWhatsapp = "6289604510417";
+
+/=========================/
+</script><script> DekaTutorial(konten, musik, nomorWhatsapp); </script> </body> </html>
